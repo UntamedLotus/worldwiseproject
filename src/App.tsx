@@ -6,7 +6,9 @@ export const App = () => {
 	return (
 		<React.StrictMode>
 			<BrowserRouter>
-				<AppRoutes />
+				<div className='p-5 h-[100vh] w-full'>
+					<AppRoutes />
+				</div>
 			</BrowserRouter>
 		</React.StrictMode>
 	);
