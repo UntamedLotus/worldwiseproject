@@ -1,6 +1,7 @@
 import React from "react";
 import Images from "../assets";
 import PageNav from "../components/PageNav";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
 	return (
@@ -27,12 +28,12 @@ const HomePage = () => {
 					can think of. Never forget your wonderful experiences, and
 					show your friends how you have wandered the world.
 				</h2>
-				<button
-					type='button'
+				<Link
+					to='/app'
 					className='bg-green-400 text-black px-6 py-2 shadow-2xl rounded-md'
 				>
 					START TRACKING NOW
-				</button>
+				</Link>
 			</section>
 		</main>
 	);
