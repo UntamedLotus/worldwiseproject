@@ -32,7 +32,11 @@ const Login = () => {
 					</div>
 
 					<footer className='flex items-center justify-center '>
-						<button className='bg-green-500 text-black text-lg px-10 py-2 rounded-md'>
+						<button
+							type='submit'
+							className='bg-green-500 text-black text-lg px-10 py-2 rounded-md disabled:cursor-not-allowed'
+							disabled={!email || !password}
+						>
 							Login
 						</button>
 					</footer>
