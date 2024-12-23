@@ -4,12 +4,32 @@ import { NavLink } from "react-router-dom";
 const AppNav = () => {
 	return (
 		<nav>
-			<ul>
+			<ul className='text-white flex items-center justify-center uppercase font-semibold'>
 				<li>
-					<NavLink to='cities'>Cities</NavLink>
+					<NavLink
+						to='cities'
+						className={({ isActive }) =>
+							`text-white py-1 px-5 rounded-l-md ${
+								isActive
+									? "bg-slate-900 rounded-md"
+									: "bg-slate-700"
+							}`
+						}
+					>
+						Cities
+					</NavLink>
 				</li>
 				<li>
-					<NavLink to='countries'>Countries</NavLink>
+					<NavLink
+						to='countries'
+						className={({ isActive }) =>
+							`text-white py-1 px-5 rounded-r-md ${
+								isActive ? "bg-slate-900 " : "bg-slate-700 "
+							}`
+						}
+					>
+						Countries
+					</NavLink>
 				</li>
 			</ul>
 		</nav>
