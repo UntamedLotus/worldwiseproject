@@ -4,12 +4,12 @@ import { NavLink } from "react-router-dom";
 const AppNav = () => {
 	return (
 		<nav>
-			<ul className='text-white flex items-center justify-center uppercase font-semibold'>
+			<ul className='text-white flex items-center justify-center uppercase font-semibold text-sm'>
 				<li>
 					<NavLink
 						to='cities'
 						className={({ isActive }) =>
-							`text-white py-1 px-5 rounded-l-md ${
+							`text-white py-2 px-5 rounded-l-md ${
 								isActive
 									? "bg-slate-900 rounded-md"
 									: "bg-slate-700"
@@ -23,7 +23,7 @@ const AppNav = () => {
 					<NavLink
 						to='countries'
 						className={({ isActive }) =>
-							`text-white py-1 px-5 rounded-r-md ${
+							`text-white py-2 px-5 rounded-r-md ${
 								isActive ? "bg-slate-900 " : "bg-slate-700 "
 							}`
 						}

@@ -6,11 +6,13 @@ import Product from "../Pages/Product";
 import Login from "../Pages/Login";
 import AppLayout from "../Pages/AppLayout";
 import CityList from "../components/CityList";
+import { ICityItem } from "../Types/index";
+import CountryList from "../components/CountryList";
 
 const BASE_URL = "http://localhost:9000";
 
 const AppRoutes = () => {
-	const [cities, setCities] = useState([]);
+	const [cities, setCities] = useState<ICityItem[]>([]);
 
 	useEffect(() => {
 		const fetchCities = async () => {
@@ -32,9 +34,12 @@ const AppRoutes = () => {
 			<Route path='pricing' element={<Pricing />} />
 			<Route path='/login' element={<Login />} />
 			<Route path='/app' element={<AppLayout />}>
-				<Route index element={<CityList />} />
-				<Route path='cities' element={<CityList />} />
-				<Route path='countries' element={<p>List Of Countries</p>} />
+				<Route index element={<CityList cities={cities} />} />
+				<Route path='cities' element={<CityList cities={cities} />} />
+				<Route
+					path='countries'
+					element={<CountryList cities={cities} />}
+				/>
 				<Route path='form' element={<p>Form</p>} />
 			</Route>
 		</Routes>
