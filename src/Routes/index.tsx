@@ -29,13 +29,14 @@ const AppRoutes = () => {
 
 	return (
 		<Routes>
-			<Route path='/' element={<HomePage />} />
+			<Route index element={<HomePage />} />
 			<Route path='product' element={<Product />} />
 			<Route path='pricing' element={<Pricing />} />
 			<Route path='/login' element={<Login />} />
 			<Route path='/app' element={<AppLayout />}>
 				<Route index element={<CityList cities={cities} />} />
 				<Route path='cities' element={<CityList cities={cities} />} />
+				<Route path='cities/:id' element={<p>City</p>} />
 				<Route
 					path='countries'
 					element={<CountryList cities={cities} />}

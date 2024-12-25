@@ -2,6 +2,7 @@ import React from "react";
 import { ICityItem } from "../Types";
 import moment from "moment";
 import { CloseIcon } from "../assets";
+import { Link } from "react-router-dom";
 
 const CityList = ({ cities }: { cities: ICityItem[] }) => {
 	if (!cities?.length)
@@ -14,7 +15,10 @@ const CityList = ({ cities }: { cities: ICityItem[] }) => {
 	return (
 		<div className='text-white space-y-5 mt-10 text-lg'>
 			{cities?.map((c) => (
-				<section className='border border-green-500 border-l-4 rounded-lg flex items-center justify-between bg-slate-700 p-4'>
+				<Link
+					to={`${c?.id}`}
+					className='border border-green-500 border-l-4 rounded-lg flex items-center justify-between bg-slate-700 p-4'
+				>
 					<section className='flex items-center gap-4'>
 						<span>{c?.emoji}</span>
 						<p>{c?.cityName}</p>
@@ -26,7 +30,7 @@ const CityList = ({ cities }: { cities: ICityItem[] }) => {
 							<CloseIcon className='h-5 w-5 text-white' />
 						</button>
 					</section>
-				</section>
+				</Link>
 			))}
 		</div>
 	);
