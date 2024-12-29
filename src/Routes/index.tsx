@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
 import Pricing from "../Pages/Pricing";
 import Product from "../Pages/Product";
@@ -34,7 +34,7 @@ const AppRoutes = () => {
 			<Route path='pricing' element={<Pricing />} />
 			<Route path='/login' element={<Login />} />
 			<Route path='/app' element={<AppLayout />}>
-				<Route index element={<CityList cities={cities} />} />
+				<Route index element={<Navigate replace to='cities' />} />
 				<Route path='cities' element={<CityList cities={cities} />} />
 				<Route path='cities/:id' element={<p>City</p>} />
 				<Route

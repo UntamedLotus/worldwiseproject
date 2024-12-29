@@ -16,7 +16,8 @@ const CityList = ({ cities }: { cities: ICityItem[] }) => {
 		<div className='text-white space-y-5 mt-10 text-lg'>
 			{cities?.map((c) => (
 				<Link
-					to={`${c?.id}`}
+					key={c?.id}
+					to={`${c?.id}?lat=${c?.position?.lat}&lng=${c?.position?.lng}`}
 					className='border border-green-500 border-l-4 rounded-lg flex items-center justify-between bg-slate-700 p-4'
 				>
 					<section className='flex items-center gap-4'>

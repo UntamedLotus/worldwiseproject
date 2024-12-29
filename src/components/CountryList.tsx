@@ -21,12 +21,13 @@ const CountryList = ({ cities }: { cities: ICityItem[] }) => {
 		[]
 	);
 
-	console.log(countries);
-
 	return (
 		<div className='text-white mt-10 text-lg grid grid-cols-3 items-center gap-5'>
-			{countries?.map((c) => (
-				<section className='bg-slate-700 p-2 flex flex-col items-center justify-center border-yellow-600 w-full h-full border-l-4 rounded-md'>
+			{countries?.map((c, i) => (
+				<section
+					key={i + 1}
+					className='bg-slate-700 p-2 flex flex-col items-center justify-center border-yellow-600 w-full h-full border-l-4 rounded-md'
+				>
 					<p>{c?.emoji}</p>
 					<p>{c?.country}</p>
 				</section>
