@@ -24,6 +24,7 @@ const AppRoutes = () => {
 					<Route path='cities/:id' element={<City />} />
 					<Route path='countries' element={<CountryList />} />
 					<Route path='form' element={<p>Form</p>} />
+					<Route path='*' element={<Navigate to='/' replace />} />
 				</Route>
 			</Routes>
 		</CitiesProvider>

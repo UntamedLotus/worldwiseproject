@@ -5,8 +5,7 @@ import { CloseIcon } from "../assets";
 import { useCities } from "../contexts/CitiesProvider";
 
 const CityList = () => {
-	const { cities } = useCities();
-	const { currentCity } = useCities();
+	const { cities, currentCity } = useCities();
 
 	if (!cities?.length)
 		return (

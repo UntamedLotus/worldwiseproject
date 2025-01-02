@@ -12,7 +12,11 @@ const CitiesContext = createContext<CitiesContextType | undefined>(undefined);
 
 const BASE_URL = "http://localhost:9000";
 
-const CitiesProvider = ({ children }: { children: ReactNode }) => {
+interface CitiesProviderProps {
+	children: ReactNode;
+}
+
+const CitiesProvider = ({ children }: CitiesProviderProps) => {
 	const [cities, setCities] = useState<ICityItem[]>([]);
 	const [currentCity, setCurrentCity] = useState<ICityItem>();
 
