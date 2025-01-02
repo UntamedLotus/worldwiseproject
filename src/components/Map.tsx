@@ -11,12 +11,12 @@ const Map = () => {
 	const [mapPosition, setMapPosition] = useState<[number, number]>([40, 0]);
 
 	return (
-		<div className='mapContainer'>
+		<div className='h-full flex-1 bg-black relative'>
 			<MapContainer
 				center={mapPosition}
 				zoom={13}
 				scrollWheelZoom={false}
-				className='map'
+				className='h-full'
 			>
 				<TileLayer
 					attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
