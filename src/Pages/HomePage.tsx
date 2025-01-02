@@ -1,9 +1,11 @@
 import React from "react";
 import Images from "../assets";
 import PageNav from "../components/PageNav";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+	const navigate = useNavigate();
+
 	return (
 		<main
 			style={{

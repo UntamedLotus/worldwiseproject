@@ -8,7 +8,7 @@ const Login = () => {
 		<main className='h-full w-full p-10 text-white grid grid-rows-[15%_auto] bg-gray-800'>
 			<PageNav />
 			<div className='flex items-center mx-auto'>
-				<form className='w-[60vw] bg-slate-700 shadow-2xl p-10 rounded-lg space-y-12 text-lg'>
+				<form className='w-[60vw] bg-gray-700 shadow-2xl p-10 rounded-lg space-y-12 text-lg'>
 					<div className='flex flex-col justify-start space-y-5'>
 						<label htmlFor='email'>Email address</label>
 						<input

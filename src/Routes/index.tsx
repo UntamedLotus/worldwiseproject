@@ -1,49 +1,32 @@
-import React, { useEffect, useState } from "react";
-import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import React from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import AppLayout from "../Pages/AppLayout";
 import HomePage from "../Pages/HomePage";
+import Login from "../Pages/Login";
 import Pricing from "../Pages/Pricing";
 import Product from "../Pages/Product";
-import Login from "../Pages/Login";
-import AppLayout from "../Pages/AppLayout";
 import CityList from "../components/CityList";
-import { ICityItem } from "../Types/index";
 import CountryList from "../components/CountryList";
-
-const BASE_URL = "http://localhost:9000";
+import { CitiesProvider } from "../contexts/CitiesProvider";
+import City from "../components/City";
 
 const AppRoutes = () => {
-	const [cities, setCities] = useState<ICityItem[]>([]);
-
-	useEffect(() => {
-		const fetchCities = async () => {
-			const res = await fetch(`${BASE_URL}/cities`);
-			const data = await res.json();
-			setCities(data);
-		};
-		try {
-			fetchCities();
-		} catch {
-			alert("There was an error loading data...");
-		}
-	}, []);
-
 	return (
-		<Routes>
-			<Route index element={<HomePage />} />
-			<Route path='product' element={<Product />} />
-			<Route path='pricing' element={<Pricing />} />
-			<Route path='/login' element={<Login />} />
-			<Route path='/app' element={<AppLayout />}>
-				<Route index element={<Navigate replace to='cities' />} />
-				<Route path='cities' element={<CityList cities={cities} />} />
-				<Route path='cities/:id' element={<p>City</p>} />
-				<Route
-					path='countries'
-					element={<CountryList cities={cities} />}
-				/>
-				<Route path='form' element={<p>Form</p>} />
-			</Route>
-		</Routes>
+		<CitiesProvider>
+			<Routes>
+				<Route index element={<HomePage />} />
+				<Route path='product' element={<Product />} />
+				<Route path='pricing' element={<Pricing />} />
+				<Route path='/login' element={<Login />} />
+				<Route path='/app' element={<AppLayout />}>
+					<Route index element={<Navigate replace to='cities' />} />
+					<Route path='cities' element={<CityList />} />
+					<Route path='cities/:id' element={<City />} />
+					<Route path='countries' element={<CountryList />} />
+					<Route path='form' element={<p>Form</p>} />
+				</Route>
+			</Routes>
+		</CitiesProvider>
 	);
 };
 

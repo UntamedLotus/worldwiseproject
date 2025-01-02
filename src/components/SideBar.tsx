@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 
 const SideBar = () => {
 	return (
-		<div className='bg-slate-800 grid grid-rows-[10%_auto_5%] px-10 py-5'>
+		<div className='bg-gray-800 grid grid-rows-[10%_auto_5%] px-10 py-5'>
 			<img
 				src={Images.WorldWise_Logo}
 				alt='worldwise logo'

@@ -1,9 +1,9 @@
 import React from "react";
-import { ICityItem } from "../Types";
-import moment from "moment";
-import { CloseIcon } from "../assets";
+import { useCities } from "../contexts/CitiesProvider";
 
-const CountryList = ({ cities }: { cities: ICityItem[] }) => {
+const CountryList = () => {
+	const { cities } = useCities();
+
 	if (!cities?.length)
 		return (
 			<p className='text-center mt-16 text-lg text-white'>
@@ -26,7 +26,7 @@ const CountryList = ({ cities }: { cities: ICityItem[] }) => {
 			{countries?.map((c, i) => (
 				<section
 					key={i + 1}
-					className='bg-slate-700 p-2 flex flex-col items-center justify-center border-yellow-600 w-full h-full border-l-4 rounded-md'
+					className='bg-gray-700 p-2 flex flex-col items-center justify-center border-yellow-600 w-full h-full border-l-4 rounded-md'
 				>
 					<p>{c?.emoji}</p>
 					<p>{c?.country}</p>
